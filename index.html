@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arasy House Price Predictor (Project)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Predictor</h1>
+        <p>Enter the details of your house and get an estimated price range.</p>
+       
+        <!-- Form for user input -->
+        <form id="predictForm">
+            <label for="OverallQual">Overall Quality (1-10):</label>
+            <input type="number" id="OverallQual" name="OverallQual" min="1" max="10" required>
+
+            <label for="GrLivArea">Above grade (ground) living area square feet:</label>
+            <input type="number" id="GrLivArea" name="GrLivArea" required>
+
+            <label for="GarageCars">Size of garage in car capacity:</label>
+            <input type="number" id="GarageCars" name="GarageCars" required>
+
+            <label for="GarageArea">Size of garage in square feet:</label>
+            <input type="number" id="GarageArea" name="GarageArea" required>
+
+            <label for="TotalBsmtSF">Total square feet of basement area:</label>
+            <input type="number" id="TotalBsmtSF" name="TotalBsmtSF" required>
+
+            <input type="submit" value="Predict Price">
+        </form>
+
+        <!-- Display Prediction -->
+        <div id="prediction" class="hidden">
+            <h2>Predicted Price:</h2>
+            <p id="predictedPrice"></p>
+        </div>
+    </div>
+</body>
+</html>
