@@ -10,10 +10,6 @@ on:
       - main
 
 jobs:
-  - name: Print current directory and list contents
-        run: |
-          pwd
-          ls -al
   build_and_push:
     runs-on: ubuntu-latest
     steps:
