@@ -10,6 +10,10 @@ on:
       - main
 
 jobs:
+  - name: Print current directory and list contents
+        run: |
+          pwd
+          ls -al
   build_and_push:
     runs-on: ubuntu-latest
     steps:
@@ -18,9 +22,9 @@ jobs:
       run: echo "${{ secrets.ACR_PASSWORD }}" | docker login ${{ secrets.ACR_LOGIN_SERVER }} -u ${{ secrets.ACR_USERNAME }} --password-stdin
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/myapp:latest .
+        docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/myapp:latest -f Dockerfile .
         docker push ${{ secrets.ACR_LOGIN_SERVER }}/myapp:latest
-
+    
   
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
